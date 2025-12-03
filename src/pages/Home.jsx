@@ -78,8 +78,8 @@ export default function Home() {
     <div className="app-wrap">
       <div className="container-card">
         <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-gray-900">Tax Records</h1>
-          <p className="text-gray-500 mt-2">Manage and view tax information</p>
+          <h1 className="text-4xl font-bold text-gray-900">Tax Handler</h1>
+          <p className="text-gray-500 mt-2">Turning tax chaos into clarity.</p>
         </div>
 
         <DataTable data={taxes} countries={countries} onEdit={openEdit} />
