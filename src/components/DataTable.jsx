@@ -20,7 +20,7 @@ export default function DataTable({ data = [], countries = [], onEdit }) {
       accessorKey: "gender",
       header: "Gender",
       cell: info => {
-        const gender = info.getValue() ?? "N/A";
+        const gender = info.getValue()?.toLowerCase() ?? "N/A";
         const isMale = String(gender).toLowerCase() === "male";
         return (
           <span className={isMale ? "badge-male" : "badge-female"}>
