@@ -30,6 +30,18 @@ export default function DataTable({ data = [], countries = [], onEdit }) {
       },
     },
     {
+      accessorKey: "requestDate",
+      header: "Request date",
+      cell: info => {
+        const raw = info.getValue();
+        const d = new Date(raw);
+        const text = isNaN(d)
+          ? (raw || "N/A")
+          : d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+        return <div className="text-gray-700">{text}</div>;
+      }
+    },
+    {
       accessorKey: "country",
       header: ({ column }) => (
         <div className="flex items-center gap-2">
@@ -104,7 +116,7 @@ export default function DataTable({ data = [], countries = [], onEdit }) {
               ))
             ) : (
               <tr>
-                <td colSpan={4} className="px-6 py-8 text-center text-gray-500">No data available</td>
+                <td colSpan={5} className="px-6 py-8 text-center text-gray-500">No data available</td>
               </tr>
             )}
           </tbody>
