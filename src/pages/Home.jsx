@@ -41,7 +41,6 @@ export default function Home() {
   }
 
   async function handleSave(updated) {
-    // `updated` should be the full record (with id)
     try {
       const saved = await updateTax(updated.id, updated);
       setTaxes(prev => prev.map(r => (String(r.id) === String(saved.id) ? saved : r)));
