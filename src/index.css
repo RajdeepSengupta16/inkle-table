@@ -94,3 +94,11 @@ body {
 .icon-btn {
   @apply p-1 rounded-md hover:bg-gray-50;
 }
+
+body {
+  background: linear-gradient(135deg, #f0f0f0, #d9d9d9, #cfcfcf);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-attachment: fixed; /* makes it smoother */
+}
